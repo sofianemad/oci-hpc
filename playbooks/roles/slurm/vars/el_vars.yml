@@ -35,6 +35,7 @@ slurm_common_packages:
 slurm_server_packages:
   - "{{ download_path }}/slurm_rpms/slurm-slurmctld-{{slurm_version}}.el{{ansible_distribution_major_version}}.x86_64.rpm"
   - "{{ download_path }}/slurm_rpms/slurm-slurmdbd-{{slurm_version}}.el{{ansible_distribution_major_version}}.x86_64.rpm"
+  - "{{ download_path }}/slurm_rpms/slurm-slurmrestd-{{slurm_version}}.el{{ansible_distribution_major_version}}.x86_64.rpm"
 
 slurm_compute_packages:
   - "{{ download_path }}/slurm_rpms/slurm-pam_slurm-{{slurm_version}}.el{{ansible_distribution_major_version}}.x86_64.rpm"
