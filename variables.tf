@@ -58,6 +58,7 @@ variable "rdma_subnet" { default = "192.168.0.0/16" }
 variable "private_subnet" { default = "172.16.4.0/22" }
 variable "ssh_cidr" { default = "0.0.0.0/0" }
 variable "slurm" { default = false }
+variable "slurmrestd" { default = false }
 variable "slurm_ha" { default = false }
 variable "login_node" { default = true }
 variable "login_ad" {default = ""}

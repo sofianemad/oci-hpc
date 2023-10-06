@@ -164,6 +164,7 @@ variableGroups:
       - ${privilege_sudo} 
       - ${privilege_group_name} 
       - ${slurm}
+      - ${slurmrestd}
       - ${slurm_nfs}
       - ${slurm_ha}
       - ${rack_aware}
@@ -1049,6 +1050,13 @@ variables:
     title: "Install SLURM"
     default: true
     description: "Needed for autoscaling" 
+
+  slurmrestd:
+    type: boolean
+    title: "Install SLURM REST API"
+    default: false
+    description: "Installs slurmrestd on the bastion(s)." 
+    visible: ${slurm}
 
   slurm_nfs:
     type: boolean

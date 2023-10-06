@@ -74,11 +74,26 @@
   with_items: "{{slurm_all_packages}}"
   when: ansible_os_family == 'RedHat' and download_path == '/tmp'
 
+- name: Download slurmrestd .rpm
+  get_url:
+    url: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/c4RDR3PLQzEMFu2WKDHvbrGom7xHnc_LAZKkze6vnFl8QVvcwxHK2enaesNXZHta/n/fr1wb0c6sbky/b/slurm/o/slurm-slurmrestd-23.02.1-1.el7.x86_64.rpm"
+    dest: "{{ download_path }}/slurm_rpms"
+  when: slurmrestd|default(false)|bool and ansible_os_family == 'RedHat' and download_path == '/tmp'
+
 - name: Download slurm .deb
   get_url:
     url: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/VnkLhYXOSNVilVa9d24Riz1fz4Ul-KTXeK4HCKoyqv0ghW3gry3Xz8CZqloqphLw/n/hpc/b/source/o/slurm/slurm-{{slurm_version}}_amd64.deb"
     dest: "{{ download_path }}/slurm_rpms"
   when: ansible_os_family == 'Debian' and download_path != '/tmp'
+  delegate_to: 127.0.0.1
+  run_once: true
+
+- name: Download slurmrestd .rpm
+  get_url:
+    url: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/c4RDR3PLQzEMFu2WKDHvbrGom7xHnc_LAZKkze6vnFl8QVvcwxHK2enaesNXZHta/n/fr1wb0c6sbky/b/slurm/o/slurm-slurmrestd-23.02.1-1.el7.x86_64.rpm"
+    dest: "{{ download_path }}/slurm_rpms"
+  with_items: "{{slurm_all_packages}}"
+  when: slurmrestd|default(false)|bool and ansible_os_family == 'RedHat' and download_path != '/tmp'
   delegate_to: 127.0.0.1
   run_once: true
 

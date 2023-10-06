@@ -247,6 +247,7 @@ resource "null_resource" "cluster" {
       redundancy = var.redundancy,
       cluster_network = var.cluster_network,
       slurm = var.slurm,
+      slurmrestd = var.slurmrestd,
       rack_aware = var.rack_aware,
       slurm_nfs_path = var.slurm_nfs ? var.nfs_source_path : var.cluster_nfs_path
       spack = var.spack,
@@ -371,6 +372,7 @@ resource "null_resource" "cluster" {
       scratch_nfs_path = var.scratch_nfs_path,
       use_scratch_nfs = var.use_scratch_nfs,
       slurm = var.slurm,
+      slurmrestd = var.slurmrestd,
       rack_aware = var.rack_aware,
       slurm_nfs_path = var.add_nfs ? var.nfs_source_path : var.cluster_nfs_path
       spack = var.spack,

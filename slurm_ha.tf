@@ -222,6 +222,7 @@ resource "null_resource" "cluster_backup" {
       redundancy = var.redundancy,
       cluster_network = var.cluster_network,
       slurm = var.slurm,
+      slurmrestd = var.slurmrestd,
       slurm_nfs_path = var.slurm_nfs ? var.nfs_source_path : var.cluster_nfs_path,
       rack_aware = var.rack_aware,
       spack = var.spack,

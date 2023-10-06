@@ -30,6 +30,7 @@ variable "private_subnet_id" { default = "##PRIVATE_SUBNET_ID##"}
 variable "private_subnet" {default = "##PRIVATE_SUBNET##"}
 variable "rdma_subnet" { default = "${rdma_subnet}" }
 variable "slurm" { default = ${slurm} }
+variable "slurmrestd" { default = ${slurmrestd} }
 variable "rack_aware" { default = ${rack_aware} }
 variable "pyxis" { default = ${pyxis} }
 variable "pam" { default = ${pam} }
