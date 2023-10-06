@@ -78,7 +78,7 @@
   get_url:
     url: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/c4RDR3PLQzEMFu2WKDHvbrGom7xHnc_LAZKkze6vnFl8QVvcwxHK2enaesNXZHta/n/fr1wb0c6sbky/b/slurm/o/slurm-slurmrestd-23.02.1-1.el7.x86_64.rpm"
     dest: "{{ download_path }}/slurm_rpms"
-  when: slurmrestd|bool and ansible_os_family == 'RedHat' and download_path == '/tmp'
+  when: slurmrestd|default(false)|bool and ansible_os_family == 'RedHat' and download_path == '/tmp'
 
 - name: Download slurm .deb
   get_url:
@@ -92,7 +92,7 @@
   get_url:
     url: "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/c4RDR3PLQzEMFu2WKDHvbrGom7xHnc_LAZKkze6vnFl8QVvcwxHK2enaesNXZHta/n/fr1wb0c6sbky/b/slurm/o/slurm-slurmrestd-23.02.1-1.el7.x86_64.rpm"
     dest: "{{ download_path }}/slurm_rpms"
-  when: slurmrestd|bool and ansible_os_family == 'RedHat' and download_path != '/tmp'
+  when: slurmrestd|default(false)|bool and ansible_os_family == 'RedHat' and download_path != '/tmp'
   delegate_to: 127.0.0.1
   run_once: true
 
