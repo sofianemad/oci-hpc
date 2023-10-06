@@ -1055,7 +1055,7 @@ variables:
     type: boolean
     title: "Install SLURM REST API"
     default: false
-    description: "Installs slurmrestd on the bastion(s)." 
+    description: "Installs slurmrestd on the bastion(s)" 
     visible: ${slurm}
 
   slurm_nfs:

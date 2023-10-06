@@ -347,6 +347,7 @@ resource "null_resource" "cluster_backup" {
       scratch_nfs_path = var.scratch_nfs_path,
       use_scratch_nfs = var.use_scratch_nfs,
       slurm = var.slurm,
+      slurmrestd = var.slurmrestd,
       slurm_nfs_path = var.add_nfs ? var.nfs_source_path : var.cluster_nfs_path
       rack_aware = var.rack_aware,
       spack = var.spack,
